@@ -95,11 +95,42 @@ const Home = () => {
   return (
     <div className="mx-auto p-4 max-w-[1150px]">
       <h1 className="">
-    <Header onToggleTheme={toggleTheme} isLightMode={isLightMode} />
-
+        <Header onToggleTheme={toggleTheme} isLightMode={isLightMode} />
       </h1>
-      <div className="mt-20">
-        <h1 className={`font-bold ${isLightMode ? 'text-black' : 'text-white'} text-3xl`}>Extension List</h1>
+      <div className="mt-20 flex items-center justify-between flex-col md:flex-row ">
+        <h1
+          className={`font-bold ${
+            isLightMode ? "text-black" : "text-white"
+          } text-3xl`}
+        >
+          Extension List
+        </h1>
+        <div className="flex items-center gap-3 mt-4 md:mt-0">
+          <button
+            className={`px-5 py-2 rounded-3xl transition-colors bg-[hsl(226,25%,17%)] hover:bg-red-500 ${
+              isLightMode ? "text-black bg-white shadow-sm" : "text-white border border-[#565a66]"
+            }`}
+          >
+            {" "}
+            All
+          </button>{" "}
+          <button
+            className={`px-5 py-2 rounded-3xl transition-colors bg-[hsl(226,25%,17%)] hover:bg-red-500 ${
+              isLightMode ? "text-black  bg-white shadow-sm" : "text-white  border border-[#565a66]"
+            }`}
+          >
+            {" "}
+            Active
+          </button>{" "}
+          <button
+            className={`px-5 py-2 rounded-3xl transition-colors bg-[hsl(226,25%,17%)] hover:bg-red-500 ${
+              isLightMode ? "text-black  bg-white shadow-sm" : "text-white  border border-[#565a66]"
+            }`}
+          >
+            {" "}
+            Inactive
+          </button>
+        </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-10">
         {data.map((items) => (

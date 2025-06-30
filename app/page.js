@@ -1,3 +1,4 @@
+import Cards from "@/components/Cards";
 import Header from "@/components/Header";
 
 const Home = () => {
@@ -8,6 +9,9 @@ const Home = () => {
       </h1>
       <div className="mt-20">
         <h1 className="font-bold text-white text-3xl">Extension List</h1>
+      </div>
+      <div>
+        <Cards />
       </div>
     </div>
   );

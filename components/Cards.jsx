@@ -1,23 +1,34 @@
 import Image from "next/image";
 
-const Cards = ({ name, desc, src,isLightMode }) => {
+const Cards = ({ name, desc, src, isLightMode }) => {
   return (
     <div
-     
-       className={`w-full p-4 rounded-2xl   transition-all duration-300 ${
-        isLightMode ? "bg-white text-black shadow-md" : "bg-[hsl(226,25%,17%)] text-[#c7c7c7] border border-[#565a66] "
+      className={`w-full p-4 rounded-2xl   transition-all duration-300 ${
+        isLightMode
+          ? "bg-white text-black shadow-md"
+          : "bg-[hsl(226,25%,17%)] text-[#c7c7c7] border border-[#565a66] "
       }`}
     >
       <div className="flex items-start gap-2">
         <Image src={src} alt={name} width={50} height={50} />
         <div>
-          <h1 className={`font-semibold ${isLightMode ? 'text-black' : 'text-white'}`}>{name}</h1>
+          <h1
+            className={`font-semibold ${
+              isLightMode ? "text-black" : "text-white"
+            }`}
+          >
+            {name}
+          </h1>
           <p className="text-[#c7c7c7] text-sm">{desc}</p>
         </div>
       </div>
 
       <div className="flex items-center justify-between mt-10">
-        <button className={`px-5 py-2 rounded-3xl border border-[#565a66] transition-colors hover:bg-red-500 ${isLightMode ? 'text-black' : 'text-white'}`}>
+        <button
+          className={`px-5 py-2 rounded-3xl border border-[#565a66] transition-colors hover:bg-red-500 ${
+            isLightMode ? "text-black" : "text-white"
+          }`}
+        >
           Remove
         </button>
 
